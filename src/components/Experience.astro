@@ -1,0 +1,93 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+import Angular from "./icons/Angular.astro"
+import Sass from "./icons/Sass.astro"
+import GitHub from "./icons/GitHub.astro"
+import MySQL from "./icons/Mysql.astro"
+import SpringBoot from "./icons/SpringBoot.astro"
+import Kafka from "./icons/Kafka.astro"
+import Laravel from "./icons/Laravel.astro"
+import PHP from "./icons/Php.astro"
+
+const TECHNOLOGIES = {
+  ANGULAR: {
+    name: "Angular",
+    icon: Angular,
+  },
+  SASS: {
+    name: "Sass",
+    icon: Sass,
+  },
+  GITHUB: {
+    name: "GitHub",
+    icon: GitHub,
+  },
+  MYSQL: {
+    name: "MySQL",
+    icon: MySQL,
+  },
+  SPRINGBOOT: {
+    name: "Spring Boot",
+    icon: SpringBoot,
+  },
+  KAFKA: {
+    name: "Kafka",
+    icon: Kafka,
+  },
+  LARAVEL: {
+    name: "Laravel",
+    icon: Laravel,
+  },
+  PHP: {
+    name: "PHP",
+    icon: PHP,
+  },
+}
+
+const EXPERIENCIE = [
+  {
+    date: "2023/07 – 2023/09",
+    title: "Frontend Angular Developer Intern − Upgradetek Engineering",
+    description: "Modernized an old website using Angular 16 and SASS, improving overall user experience and interface design.",
+    link: "", // Add link if available
+    technologies: [TECHNOLOGIES.ANGULAR, TECHNOLOGIES.SASS, TECHNOLOGIES.GITHUB],
+  },
+  {
+    date: "2023/07 – 2023/09",
+    title: "Fullstack Developer Intern − Linkin Way",
+    description:
+      "Developed a social exchange application . The app allows users to interact with social media pages to earn points, and points are deducted when other users interact with their pages. Implemented a robust login system using Facebook, LinkedIn, and Google APIs. Integrated point purchase system.",
+    link: "", // Add link if available
+    technologies: [TECHNOLOGIES.ANGULAR, TECHNOLOGIES.SPRINGBOOT, TECHNOLOGIES.GITHUB,TECHNOLOGIES.KAFKA,TECHNOLOGIES.MYSQL],
+
+  },
+  {
+    date: "2023/05 – 2023/07",
+    title: "Laravel Backend Developer Intern − BE-Siyessah",
+    description:
+      "Developed a video management system using Laravel and integrated a premium content access system. Optimized backend infrastructure for better performance.",
+    link: "", // Add link if available
+    technologies: [TECHNOLOGIES.GITHUB,TECHNOLOGIES.LARAVEL,TECHNOLOGIES.MYSQL],
+
+  },
+  {
+    date: "2022/07 – 2022/08",
+    title: "PHP Developer Intern − GAT Insurance",
+    description:
+      "Built a secure PHP application for user management.",
+    link: "", // Add link if available
+    technologies: [TECHNOLOGIES.GITHUB,TECHNOLOGIES.PHP,TECHNOLOGIES.MYSQL],
+
+  },
+]
+---
+
+<ol class="relative border-s border-gray-200 ml-3">
+  {
+    EXPERIENCIE.map((experiencie) => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>

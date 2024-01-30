@@ -1,0 +1,451 @@
+---
+import GitHub from "./icons/GitHub.astro";
+import Angular from "./icons/Angular.astro";
+import Sass from "./icons/Sass.astro";
+import SpringBoot from "./icons/SpringBoot.astro";
+import Mysql from "./icons/Mysql.astro";
+import Java from "./icons/java.astro";
+import Symfony from "./icons/Sypmfony.astro";
+
+import LinkButton from "./LinkButton.astro";
+import Badge from "./Badge.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import Svelte from "./icons/Svelte.astro";
+
+const TAGS = {
+  Angular: {
+    name: "angular",
+    class: "bg-black text-white",
+    icon: Angular,
+  },
+  Sass: {
+    name: "Sass",
+    class: "bg-[#003159] text-white",
+    icon: Sass,
+  },
+
+  Mysql: {
+    name: "Mysql",
+    class: "bg-[#000000] text-white",
+    icon: Mysql,
+  },
+
+  SpringBoot: {
+    name: "SpringBoot",
+    class: "bg-[#000000] text-white",
+    icon: SpringBoot,
+  }, Java: {
+    name: "Java",
+    class: "bg-[#000000] text-white",
+    icon: Java,
+  },
+
+  Symfony: {
+    name: "Sympfony",
+    class: "bg-[#000000] text-white",
+    icon: Symfony,
+  },
+
+  Tailwind: {
+    name: "Tailwind",
+    class: "bg-[#000000] text-white",
+    icon: Tailwind,
+  },
+  Svelte: {
+    name: "Svelte",
+    class: "bg-[#000000] text-white",
+    icon: Svelte,
+  },
+};
+
+const PROJECTS = [
+  {
+    title: "AmplifyMe - A Social Exchange Platform",
+    description:
+      "AmplifyMe is a social exchange platform that allows users to exchange points for social interactions. Whether you want more followers or more likes on a post, AmplifyMe has got you covered. Users can also purchase more points using the Flouci API. Login options include JWT, Facebook, Google, and LinkedIn.",
+    github: "https://github.com/aminebalti55/AmplifyMe",
+    images: [
+      "/portfolio/amplifyme/7.png",
+      "/portfolio/amplifyme/4.png",
+      "/portfolio/amplifyme/5.png",
+      "/portfolio/amplifyme/6.png",
+
+    ],
+    tags: [TAGS.Angular, TAGS.Sass, TAGS.Mysql,TAGS.SpringBoot],
+  },
+  {
+    title: "Edutopia : Restaurant Management Website",
+    description:
+      "Edutopia is a restaurant management application designed specifically for students. Built with Spring Boot, Angular, MySQL, and Keycloak, it offers a variety of features to help students manage their dining experiences",
+    github: "https://github.com/aminebalti55/Edutopia",
+    images: [
+      "/portfolio/edutopia/1.png",
+      "/portfolio/edutopia/2.png",
+      "/portfolio/edutopia/3.png",
+      "/portfolio/edutopia/4.png",
+      "/portfolio/edutopia/5.png",
+      "/portfolio/edutopia/6.png",
+      "/portfolio/edutopia/7.png",
+      "/portfolio/edutopia/8.png",
+      
+    ],
+    tags: [TAGS.Angular, TAGS.SpringBoot, TAGS.Mysql],
+  },
+  {
+    title: "BlastAndBurn : Fitness Management Application",
+    description:
+      "BlastAndBurn is a comprehensive fitness management application built with Java, MySQL, and JavaFX. It offers a modern, user-friendly interface and a variety of features to help users take control of their fitness journey.",
+    github: "https://github.com/aminebalti55/BlastAndBurnJava",
+    images: [
+      "/portfolio/javafx/1.png",
+      "/portfolio/javafx/2.png",
+      "/portfolio/javafx/3.png",
+      "/portfolio/javafx/4.png",
+      "/portfolio/javafx/5.png",
+      "/portfolio/javafx/6.png",
+      "/portfolio/javafx/7.png",
+      "/portfolio/javafx/8.png",
+      "/portfolio/javafx/9.png",
+
+      
+    ],
+    tags: [TAGS.Java, TAGS.Mysql],
+  },
+  {
+    title: "BlastAndBurn  Website : Fitness Management Web Application",
+    description:
+      "BlastAndBurn is a comprehensive fitness management application built with Symfony and MySQL. It offers a modern, user-friendly interface and a variety of features to help users take control of their fitness journey.",
+    github: "https://github.com/aminebalti55/BlastAndBurnSymfony",
+    images: [
+      "/portfolio/symfony/1.png",
+      "/portfolio/symfony/2.png",
+      "/portfolio/symfony/3.png",
+      "/portfolio/symfony/4.png",
+      "/portfolio/symfony/5.png",
+      "/portfolio/symfony/6.png",
+      "/portfolio/symfony/7.png",
+      "/portfolio/symfony/8.PNG",
+
+      
+    ],
+    tags: [TAGS.Symfony, TAGS.Mysql],
+  },{
+    title: "SvelteKit Agile/Scrum Quiz Game",
+    description:
+      "a web application using SvelteKit that offers a brief and interactive quiz game focused on Agile/Scrum methodologies. The game features three difficulty levels, each with specific quiz questions. Additionally, there are two interactive games to teach the Burn Down Chart and the To Do, Done, and In Progress table. This project aims to provide an engaging and educational experience for users to learn and reinforce their understanding of Agile/Scrum principles.",
+    github: "https://github.com/aminebalti55/ScrumQuizz",
+    link: "https://scrumquizz3a43.netlify.app/",
+    images: [
+      "/portfolio/quizz/1.png",
+      "/portfolio/quizz/2.png",
+      "/portfolio/quizz/3.png",
+      "/portfolio/quizz/4.png",
+      "/portfolio/quizz/5.png",
+      "/portfolio/quizz/6.png",
+
+      
+    ],
+    tags: [TAGS.Tailwind, TAGS.Svelte],
+  }
+];
+---
+
+<style>
+  .carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .carousel::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
+
+  .carousel article {
+    flex: 0 0 auto;
+    width: 80%; /* adjust this value to your liking */
+    margin-right: 10%; /* adjust this value to your liking */
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+
+  .carousel article:not(.active) {
+    filter: blur(5px); /* adjust this value to your liking */
+  }
+
+  .carousel-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+
+  .carousel-nav button {
+    /* existing styles... */
+    pointer-events: auto;
+  }
+
+  .carousel article:not(.active) {
+    filter: blur(5px);
+  }
+
+  .carousel article.blur {
+    filter: blur(5px);
+  }
+
+  .carousel-images {
+    position: relative;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  scrollbar-width: none; 
+
+}
+.carousel-images::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+.carousel-prev, .carousel-next {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  transition: color 0.3s ease-in-out;
+}
+
+.carousel-prev {
+  left: 10px;
+}
+
+.carousel-next {
+  right: 10px;
+}
+
+.carousel-prev:hover, .carousel-next:hover {
+  color: #666;
+}
+
+.carousel-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: gray;
+}
+
+.carousel-dot.active {
+  background: white;
+}
+.carousel-images img {
+  display: none;
+}
+
+.carousel-images img.active {
+  display: block;
+}
+</style>
+
+<div class="carousel-nav">
+  <Badge>
+    <button class="prev" data-direction="-1">Previous</button>
+  </Badge>
+  <Badge>
+    <button class="next" data-direction="1">Next</button>
+  </Badge>
+</div>
+
+<section class="carousel">
+  {PROJECTS.map(({ images, title, description, tags, link, github }, index) => (
+    <article id={`project-${index}`} class={index === 0 ? 'active' : ''}>
+      <h3 class="text-2xl font-semibold text-yellow-800 dark:text-yellow-200 mb-2">
+        {title}
+      </h3>
+      <p class="text-lg mb-4 text-pretty">{description}</p>
+      <ul class="flex gap-x-2 flex-row mb-2">
+        {tags.map((tag) => (
+          <li>
+            <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}>
+              <tag.icon class="size-4" />
+              {tag.name}
+            </span>
+          </li>
+        ))}
+      </ul>
+
+      <div class="carousel-images">
+  {images.map((image, imageIndex) => (
+    <img
+      id={`image-${index}-${imageIndex}`}
+      loading="lazy"
+      class={`carousel-image rounded shadow-2xl shadow-white/10 aspect-video ${imageIndex === 0 ? 'active' : ''}`}
+      src={image}
+      alt={`Captura de pantalla del proyecto ${image}`}
+    />
+  ))}
+  <button class="carousel-prev relative flex overflow-hidden rounded-full p-[1px]" data-project={index} data-direction="-1">
+  <span class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]"></span>
+  <div class="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950/90 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl whitespace-nowrap">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+    </svg>
+  </div>
+</button>
+<button class="carousel-next relative flex overflow-hidden rounded-full p-[1px]" data-project={index} data-direction="1">
+  <span class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]"></span>
+  <div class="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950/90 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl whitespace-nowrap">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+    </svg>
+  </div>
+</button>
+
+  <div class="carousel-dots">
+    {images.map((_, imageIndex) => (
+      <span id={`dot-${index}-${imageIndex}`} class={`carousel-dot ${imageIndex === 0 ? 'active' : ''}`}></span>
+    ))}
+  </div>
+</div>
+
+      <footer class="flex gap-x-4 items-end justify-start mt-4">
+        {github && (
+          <LinkButton href={github}>
+            <GitHub class="size-3" />
+Find It On github
+          </LinkButton>
+        )}
+        {link && (
+          <LinkButton href={link}>
+            <link class="size-3" />
+Check the website          </LinkButton>
+        )}
+      </footer>
+    </article>
+  ))}
+</section>
+
+<script>
+  const carousel = document.querySelector('.carousel');
+  const buttons = document.querySelectorAll('.carousel-nav button');
+  let currentProjectIndex = 0;
+  
+  if (carousel) {
+    const projects = Array.from(carousel.children);
+    const maxIndex = projects.length - 1; // maximum index value
+  
+    buttons.forEach((button) => {
+      const htmlButton = button as HTMLElement;
+      htmlButton.addEventListener('click', (event) => {
+        event.preventDefault(); // prevent default behavior
+        const direction = Number(htmlButton.dataset.direction);
+        const newProjectIndex = currentProjectIndex + direction;
+  
+        // Check if the new index is within the valid range
+        if (newProjectIndex >= 0 && newProjectIndex <= maxIndex) {
+          const currentProject = document.getElementById(`project-${currentProjectIndex}`);
+          if (currentProject) {
+            currentProject.classList.remove('active');
+          }
+          currentProjectIndex = newProjectIndex;
+          const targetProject = document.getElementById(`project-${currentProjectIndex}`);
+          if (targetProject) {
+            targetProject.classList.add('active');
+            history.replaceState(null, '', `#project-${currentProjectIndex}`);
+            // Smoothly scroll the carousel to the target project
+            carousel.scrollTo({
+              left: targetProject.getBoundingClientRect().left - carousel.getBoundingClientRect().left + carousel.scrollLeft,
+              behavior: 'smooth'
+            });
+          }
+        }
+      });
+    });
+  
+    // Listen to the scroll event
+    carousel.addEventListener('scroll', () => {
+    projects.forEach((project, index) => {
+      const rect = project.getBoundingClientRect();
+      if (rect.left >= 0 && rect.right <= window.innerWidth) {
+        // This project is in view
+        if (currentProjectIndex !== index) {
+          // Remove active and blur classes from the previous project
+          const currentProject = document.getElementById(`project-${currentProjectIndex}`);
+          if (currentProject) {
+            currentProject.classList.remove('active');
+            currentProject.classList.add('blur');
+          }
+          // Add active class and remove blur class from the current project
+          project.classList.add('active');
+          project.classList.remove('blur');
+          currentProjectIndex = index;
+        }
+      }
+    });
+  });
+  }
+
+  var prevButtons = document.querySelectorAll('.carousel-prev');
+var nextButtons = document.querySelectorAll('.carousel-next');
+
+// Add event listeners for the previous buttons
+prevButtons.forEach((prevButton) => {
+  prevButton.addEventListener('click', function(event) {
+    var target = event.currentTarget as HTMLElement; // Changed to currentTarget
+    var projectIndex = Number(target.dataset.project);
+    var images = Array.from(document.querySelectorAll(`#project-${projectIndex} .carousel-images img`));
+    var dots = Array.from(document.querySelectorAll(`#project-${projectIndex} .carousel-dots .carousel-dot`));
+    var currentImageIndex = images.findIndex((image) => image.classList.contains('active'));
+    var newIndex = currentImageIndex - 1;
+    if (newIndex < 0) {
+      newIndex = images.length - 1;
+    }
+    updateImage(newIndex, images, dots);
+  });
+});
+
+// Add event listeners for the next buttons
+nextButtons.forEach((nextButton) => {
+  nextButton.addEventListener('click', function(event) {
+    var target = event.currentTarget as HTMLElement; // Changed to currentTarget
+    var projectIndex = Number(target.dataset.project);
+    var images = Array.from(document.querySelectorAll(`#project-${projectIndex} .carousel-images img`));
+    var dots = Array.from(document.querySelectorAll(`#project-${projectIndex} .carousel-dots .carousel-dot`));
+    var currentImageIndex = images.findIndex((image) => image.classList.contains('active'));
+    var newIndex = currentImageIndex + 1;
+    if (newIndex >= images.length) {
+      newIndex = 0;
+    }
+    updateImage(newIndex, images, dots);
+  });
+});
+
+// Function to update the image
+function updateImage(newIndex:any, images:any, dots:any) {
+  // Find the current active image and dot
+  var currentImageIndex = images.findIndex((image:any) => image.classList.contains('active'));
+
+  // Remove the active class from the current image and dot
+  images[currentImageIndex].classList.remove('active');
+  dots[currentImageIndex].classList.remove('active');
+
+  // Add the active class to the new image and dot
+  images[newIndex].classList.add('active');
+  dots[newIndex].classList.add('active');
+}
+
+</script>

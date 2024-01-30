@@ -1,0 +1,62 @@
+---
+// Define the skills
+const SKILLS = [
+  "C", "C++", "PHP", "HTML", "Java", "Symfony", "Spring Boot", "Angular", "ASP.NET", 
+  "MYSQL", "MongoDB", "GraphQL", "REST API", "JAVASCRIPT", "Laravel", "Microservices", 
+  "Docker", "Mockito", "Sass", "Tailwind CSS", "Linux Administration", "Kafka", 
+  "Keycloak", "Big Data","Svelte","Junit","Jenkins", "Kanban", "Scrum", "Git"
+]
+---
+
+<style>
+  .skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style: none;
+  }
+  .badge {
+    display: inline-flex;
+    overflow: hidden;
+    position: relative;
+    border-radius: 9999px;
+    padding: 1px;
+  }
+  .badge::before {
+    content: "";
+    position: absolute;
+    inset: -1000%;
+    animation: spin 2s linear infinite;
+    background: conic-gradient(from 90deg at 50% 50%, #E2CBFF 0%, #393BB2 50%, #E2CBFF 100%);
+  }
+  .badge-content {
+    display: inline-flex;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    background: rgba(31, 41, 55, 0.9);
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #fff;
+    backdrop-filter: blur(20px);
+    white-space: nowrap;
+  }
+</style>
+
+<section class="skills-section">
+  <ul class="skills-list">
+    {SKILLS.map((skill) => (
+      <li>
+        <div class="badge">
+          <div class="badge-content">
+            {skill}
+          </div>
+        </div>
+      </li>
+    ))}
+  </ul>
+</section>

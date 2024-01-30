@@ -1,0 +1,108 @@
+---
+import Layout from "@/layouts/Layout.astro"
+
+import AboutMe from "@/components/AboutMe.astro"
+import Badge from "@/components/Badge.astro"
+import Briefcase from "@/components/icons/Briefcase.astro"
+import SkillsIcon from "@/components/icons/SkillsIcon.astro"
+import CodeIcon from "@/components/icons/Code.astro"
+import Experience from "@/components/Experience.astro"
+import GitHubIcon from "@/components/icons/GitHub.astro"
+import LinkedInIcon from "@/components/icons/LinkedIn.astro"
+import MailIcon from "@/components/icons/Mail.astro"
+import ProfileCheck from "@/components/icons/ProfileCheck.astro"
+import Projects from "@/components/Projects.astro"
+import SectionContainer from "@/components/SectionContainer.astro"
+import SocialPill from "@/components/SocialPill.astro"
+import Skills from "@/components/Skills.astro"
+---
+
+<Layout
+  title="Amine Balti - Software Developer"
+  description="Amine Balti - Software Developer"
+
+>
+  <main class="px-4">
+    <SectionContainer id ="contact"class="py-44 pb-32">
+      <img
+        class="rounded-full size-12 mb-4"
+        src="/amine.jpg"
+        alt="amine photo"
+      />
+      <h1
+        class="text-gray-900 dark:text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
+      >
+        Hey, i'am amine <a
+          href="https://www.linkedin.com/in/amine-balti-10466125a/"
+          target="_blank"
+          rel="noopener"
+          class="flex justify-center items-center hover:scale-105 transition"
+        >
+          <Badge>Open To Work</Badge>
+        </a>
+      </h1>
+      <h2 class="text-xl lg:text-2xl text-balance max-w-[700px] text-black dark:text-white"> <span>Passionate Software Engineer and Graphic Designer</span> <span class="text-yellow-800 dark:text-yellow-200"> Creating Unique Applications </span>. <span class="text-red-800 dark:text-red-200"> Based in Tunisia, Ariana </span><span class="text-sky-800 dark:text-sky-200">Leveraging My Skills to Make an Impact. </span> <span> Dedicated Software Engineering Student with a Growing Portfolio . </span> </h2>
+
+      <nav class="flex gap-4 mt-8 flex-wrap">
+        <SocialPill href="https://www.linkedin.com/in/amine-balti-10466125a/">
+          <LinkedInIcon class="size-4 md:size-6" />
+          LinkedIn
+        </SocialPill>
+        <SocialPill href="https://github.com/aminebalti55">
+          <GitHubIcon class="size-4 md:size-6" />
+          GitHub
+        </SocialPill>
+        <SocialPill href="mailto:miduga@gmail.com">
+          <MailIcon class="size-4 md:size-6" />
+          mohamedamine.balti@esprit.tn
+        </SocialPill>
+      </nav>
+    </SectionContainer>
+
+    <SectionContainer id="experience">
+      <h2
+        class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80"
+      >
+        <Briefcase class="size-7" />
+        Work Experience
+            </h2>
+      <Experience />
+
+     
+
+    </SectionContainer>
+
+    <SectionContainer id="projects">
+      <h2
+        class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80"
+      >
+        <CodeIcon class="size-7" />
+        Projects
+      </h2>
+      <Projects />
+ 
+    </SectionContainer>
+
+
+    <SectionContainer id="Skills">
+      <h2
+      class="text-3xl font-semibold mb-6  flex gap-x-3 items-center text-black/80 dark:text-white/80"
+    >
+      <SkillsIcon class="size-7" />
+    My Skills
+    </h2>
+
+    <Skills /> 
+    </SectionContainer>
+
+    <SectionContainer id="aboutme">
+      <h2
+        class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80"
+      >
+        <ProfileCheck class="size-7" />
+        About Me
+      </h2>
+      <AboutMe />
+    </SectionContainer>
+  </main>
+</Layout>
